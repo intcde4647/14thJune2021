@@ -1,0 +1,212 @@
+
+Standard Edition  ( SE )
+Enterprise Edition ( JEE)
+Java Micro/Mobile edition ( JME)
+
+JEE =====> Enterprise application / Business application.
+
+     1) Security 
+     2) Transaction
+     3) Scalable
+     4) Reliable
+     5) Consistency
+-------------------------------------------------------------------------------------
+
+https://javaee.github.io/tutorial/
+https://javaee.github.io/tutorial/overview001.html#A1046550
+
+Enterprise edition comprises of many technologies:-
+
+1) JSP
+2) Servlets
+3) EJB
+4) JMS
+5) JTA
+6) JNDI 
+7) Web Services 
+------------------------------------------------------------------------------------------------------------
+Web Technology ( JSP and Servlets )
+
+When we talk about enterprise application , we need to have servers:-
+
+1) Web Servers ======> Tomcat
+2) Application Servers ==========> Websphere, Weblogic, Glassfish, JBOSS
+
+------------------------------------------------------------------------------------------------------
+Web Servers can support web applications only where as Application servers can support other technologies
+apart from web applications.
+ 
+Application Servers are superset of Web servers.
+
+--------------------------------------------------------------------------------------------------------
+
+JSP and Servlets we can either work on web server or application servers. So in our case we will will be using
+Tomcat as a web server.
+
+The link to download tomcat.......   
+   
+https://tomcat.apache.org/download-90.cgi
+
+-----------------------------------------------------------------------
+
+Download the tomcat server and add it to the IDE.    ( Change the perspective from Java JEE if required)
+
+-----------------------------------------------------------------------------------------
+Let us create a simple web project .........
+
+File ========> New =============> Dynamic Web Project.     
+
+---------------------------------------------------------------------------------------------------
+We we require Servlet and JSP?
+
+So to create dynamic content at the server side.........
+
+
+We can have two types of contents :
+   1) Static content ======> Static content are those which dont change automatically with time and requirement. Static contents are being designed with HTML, CSS
+   2) dynamic contents =======> pages are created and contents get changed on fly , depending on user's request.  Server side programs or codes like JSP, servlets, ASP.net, PHP.
+-------------------------------------------------------------------------------------------------------------
+text/html======> MIME ( Multipurpose Internet MAil Extension)
+
+text/plain
+text/html
+image/jpg
+image/gif
+
+The first part is the mime type and second part is the sub type.
+
+---------------------------------------------------------------------------------------------------------------
+
+
+For knowing Servlets or using Servlets we should have idea and further the Servlet API knowledge.
+Servlet code in turn contains the HTML code.
+ 
+
+-------------------------------------------------------------------------------------------------------------
+
+JSP=Html+java within some tags
+------------------------------------------------------
+<%@ page which is a directive tag 
+<%  %> ------- scriptlet tag
+out is a predefined object of JspWriter
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+                  <% String name="Hello CTS!!!";
+                     out.print(name); %>
+</body>
+</html>
+
+------------------------------------------------------------------------------------------------
+<%=    %>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+                    <%=2+2%>
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------
+We are finding JSP much more easier to learn and handle , so should we learn JSP only?
+Ans No, JSP is having its own role and Servlet is having its own role.
+
+--------------------------------------------------------------------------------------
+
+Whenever we design this kind of  application , we try to follow MVC architectural design pattern.
+
+   M========> Model ( data containers or it handles the data)
+   V========> View ( Displaying the data )
+   C========> Controller ( It provides a synch between Model and View) 
+
+   Model======> Java Class
+   View=======> JSP
+   Controller ======> Servlet
+---------------------------------------------------------------------------------------------
+login.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <table>
+     <form action="LoginController">
+        <tr>     
+         <td>USERNAME</td><td><input type="text" name="username"/></td>
+         </tr>
+         <tr>     
+         <td>PASSWORD</td><td><input type="password" name="password"/></td>
+         </tr>
+         tr>     
+         <td><input type="submit" value="login"/></td>
+         </tr>
+       </form>
+    </table>
+</body>
+</html>
+
+-------------------------------------------------------------------------------
+
+success.jsp 
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+     Welcome to my page!!!!!
+</body>
+</html>
+
+error.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    Error in Login !!!!!!!
+</body>
+</html>
+--------------------------------------------------------------------------------------
+In our example 
+
+login.jsp
+error.jsp
+success.jsp     ====================> view
+
+LoginController =====================> controller
+
+User      ==============================> model
+
+
+
+
